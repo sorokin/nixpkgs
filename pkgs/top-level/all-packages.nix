@@ -690,6 +690,8 @@ let
 
   bchunk = callPackage ../tools/cd-dvd/bchunk { };
 
+  bear = callPackage ../development/tools/bear { };
+
   bfr = callPackage ../tools/misc/bfr { };
 
   bibtool = callPackage ../tools/misc/bibtool { };
