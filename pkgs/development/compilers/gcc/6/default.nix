@@ -213,16 +213,14 @@ stdenv.mkDerivation ({
 
   builder = ../builder.sh;
 
+  outputs = [ "out" "info" ];
+
   src = fetchurl {
     url = "mirror://gnu/gcc/gcc-${version}/gcc-${version}.tar.bz2";
     sha256 = "1idpf43988v1a6i8lw9ak1r7igcfg1bm5kn011iydlr2qygmhi4r";
   };
 
   inherit patches;
-
-  outputs = [ "out" "lib" "man" "info" ];
-  setOutputFlags = false;
-  NIX_NO_SELF_RPATH = true;
 
   postPatch =
     if (stdenv.isGNU
