@@ -1998,6 +1998,8 @@ let
     inherit gfortran;
   });
 
+  heaptrack = callPackage ../development/tools/analysis/heaptrack { };
+
   heimdall = callPackage ../tools/misc/heimdall { };
 
   hevea = callPackage ../tools/typesetting/hevea { };
