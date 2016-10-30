@@ -1,20 +1,20 @@
-{ stdenv, fetchgit, cmake, qt }:
+{ stdenv, fetchgit, cmake, qtbase, libunwind, elfutils, boost, kde5 }:
 
 let
-  version = "0.18.1";
+  version = "75a9113ea345c696cabab33517686efc0420f00a";
 in
 
 stdenv.mkDerivation {
-  name = "qastools-${version}";
+  name = "heaptrack-git";
 
-  src = fetchurl {
+  src = fetchgit {
     url = "git://anongit.kde.org/heaptrack";
-    rev = "75a9113ea345c696cabab33517686efc0420f00a";
-    sha256 = "1sac6a0j1881wgpv4491b2f4jnhqkab6xyldmcg1wfqb5qkdgz12";
+    rev = version;
+    sha256 = "0ds3blghijcmcay6iy6gszv89f719qpc45hcd3qx9408mcv81bsg";
   };
 
   buildInputs = [
-    cmake qt
+    cmake qtbase libunwind elfutils boost kde5.extra-cmake-modules
   ];
 
   meta = with stdenv.lib; {

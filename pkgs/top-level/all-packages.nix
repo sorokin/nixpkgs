@@ -1998,7 +1998,7 @@ let
     inherit gfortran;
   });
 
-  heaptrack = callPackage ../development/tools/analysis/heaptrack { };
+  heaptrack = qt5.callPackage ../development/tools/analysis/heaptrack { };
 
   heimdall = callPackage ../tools/misc/heimdall { };
 
