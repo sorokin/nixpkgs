@@ -13164,6 +13164,7 @@ let
     };
 
   mpv = callPackage ../applications/video/mpv rec {
+    ffmpeg = ffmpeg_3;
     lua = lua5_1;
     lua5_sockets = lua5_1_sockets;
     youtube-dl = pythonPackages.youtube-dl;
