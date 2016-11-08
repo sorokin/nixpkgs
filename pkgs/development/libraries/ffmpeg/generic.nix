@@ -1,6 +1,6 @@
 { stdenv, fetchurl, pkgconfig, perl, texinfo, yasm
 , alsaLib, bzip2, fontconfig, freetype, gnutls, libiconv, lame, libass, libogg
-, libtheora, libva, libvorbis, libvpx, lzma, libpulseaudio, soxr
+, speex, libtheora, libva, libvorbis, libvpx, lzma, libpulseaudio, soxr
 , x264, xvidcore, zlib
 , openglSupport ? false, mesa ? null
 # Build options
@@ -118,6 +118,7 @@ stdenv.mkDerivation rec {
       "--enable-libtheora"
       (ifMinVer "0.6" (enableFeature (isLinux || isFreeBSD) "vaapi"))
       "--enable-vdpau"
+      "--enable-libspeex"
       "--enable-libvorbis"
       (disDarwinOrArmFix (ifMinVer "0.6" "--enable-libvpx") "0.6" "--disable-libvpx")
       (ifMinVer "2.4" "--enable-lzma")
@@ -140,7 +141,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ perl pkgconfig texinfo yasm ];
 
   buildInputs = [
-    bzip2 fontconfig freetype gnutls libiconv lame libass libogg libtheora
+    bzip2 fontconfig freetype gnutls libiconv lame libass libogg speex libtheora
     libvdpau libvorbis lzma SDL soxr x264 xvidcore zlib
   ] ++ optional openglSupport mesa
     ++ optionals (!isDarwin && !isArm) [ libvpx libpulseaudio ] # Need to be fixed on Darwin and ARM
