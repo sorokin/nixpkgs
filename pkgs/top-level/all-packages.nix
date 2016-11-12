@@ -6729,7 +6729,7 @@ let
   ffmpeg_1 = ffmpeg_1_2;
   ffmpeg_2 = ffmpeg_2_8;
   ffmpeg_3 = ffmpeg_3_1;
-  ffmpeg = ffmpeg_2;
+  ffmpeg = ffmpeg_3;
 
   ffmpeg-full = callPackage ../development/libraries/ffmpeg-full {
     # The following need to be fixed on Darwin
