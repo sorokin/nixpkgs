@@ -6636,9 +6636,7 @@ in
 
   premake = premake4;
 
-  qtcreator = qt5.callPackage ../development/qtcreator {
-    withDocumentation = false; # 'true' is currently broken with qt>=5.5
-  };
+  qtcreator = qt5.callPackage ../development/qtcreator { };
 
   radare = callPackage ../development/tools/analysis/radare {
     inherit (gnome) vte;
