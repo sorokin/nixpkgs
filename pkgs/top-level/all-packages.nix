@@ -8147,7 +8147,9 @@ let
   mdds_0_7_1 = callPackage ../development/libraries/mdds/0.7.1.nix { };
   mdds = callPackage ../development/libraries/mdds { };
 
-  mediastreamer = callPackage ../development/libraries/mediastreamer { };
+  mediastreamer = callPackage ../development/libraries/mediastreamer {
+    ffmpeg = ffmpeg_2;    
+  };
 
   mediastreamer-openh264 = callPackage ../development/libraries/mediastreamer/msopenh264.nix { };
 
@@ -11840,6 +11842,7 @@ let
   cmus = callPackage ../applications/audio/cmus {
     libjack = libjack2;
     libcdio = libcdio082;
+    ffmpeg = ffmpeg_2;
 
     pulseaudioSupport = config.pulseaudio or false;
   };
