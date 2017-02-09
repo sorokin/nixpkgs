@@ -14,7 +14,7 @@
 , compiler-rt_src
 , libcxxabi
 , debugVersion ? false
-, enableSharedLibraries ? !stdenv.isDarwin
+, enableSharedLibraries
 }:
 
 let
