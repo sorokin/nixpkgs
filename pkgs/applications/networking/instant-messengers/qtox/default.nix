@@ -4,7 +4,7 @@
   qtbase, qtsvg, qttools, qttranslations, sqlcipher }:
 
 let
-  version = "1.5.0";
+  version = "1.8.1";
   revision = "v${version}";
 in
 
@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
       owner = "tux3";
       repo = "qTox";
       rev = revision;
-      sha256 = "1na2qqzbdbjfw8kymxw5jfglslmw18fz3vpw805pqg4d5y7f7vsi";
+      sha256 = "073kwfaw5n7vvcpwrpdbw5mlswbbwjipx7yy4a95r9z0gjljqnhq";
   };
 
   buildInputs =
