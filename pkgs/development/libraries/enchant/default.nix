@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, aspell, pkgconfig, glib, hunspell, hspell }:
+{ stdenv, fetchurl, aspell, pkgconfig, glib, hunspell }:
 
 stdenv.mkDerivation rec {
   name = "${pname}-${version}";
@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
     sha256 = "0zq9yw1xzk8k9s6x83n1f9srzcwdavzazn3haln4nhp9wxxrxb1g";
   };
   
-  buildInputs = [aspell pkgconfig glib hunspell hspell];
+  buildInputs = [aspell pkgconfig glib hunspell];
   
   meta = {
     homepage = http://www.abisource.com/enchant;
