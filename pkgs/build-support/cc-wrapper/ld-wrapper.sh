@@ -53,7 +53,7 @@ fi
 
 source @out@/nix-support/add-hardening.sh
 
-extraAfter=("${hardeningLDFlags[@]}")
+extraAfter=()
 extraBefore=()
 
 if [ -z "${NIX_@infixSalt@_LDFLAGS_SET:-}" ]; then
