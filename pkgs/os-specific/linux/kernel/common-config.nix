@@ -27,6 +27,7 @@ with stdenv.lib;
     MODULE_COMPRESS_XZ y
   ''}
 
+  PAGE_TABLE_ISOLATION n
   KERNEL_XZ y
 
   # Debugging.
