@@ -1,7 +1,7 @@
 { stdenv, fetchurl, pkgconfig, perl, texinfo, yasm
 , alsaLib, bzip2, fontconfig, freetype, gnutls, libiconv, lame, libass, libogg
 , libtheora, libva, libvorbis, libvpx, lzma, libpulseaudio, soxr
-, x264, x265, xvidcore, zlib, libopus
+, x264, x265, xvidcore, zlib, libopus, speex, libssh
 , hostPlatform
 , openglSupport ? false, mesa ? null
 # Build options
@@ -138,6 +138,8 @@ stdenv.mkDerivation rec {
       "--enable-zlib"
       (ifMinVer "2.8" "--enable-libopus")
       (ifMinVer "2.8" "--enable-libx265")
+      "--enable-libspeex"
+      "--enable-libssh"
     # Developer flags
       (enableFeature debugDeveloper "debug")
       (enableFeature optimizationsDeveloper "optimizations")
@@ -151,7 +153,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     bzip2 fontconfig freetype gnutls libiconv lame libass libogg libtheora
-    libvdpau libvorbis lzma soxr x264 x265 xvidcore zlib libopus
+    libvdpau libvorbis lzma soxr x264 x265 xvidcore zlib libopus speex libssh
   ] ++ optional openglSupport mesa
     ++ optionals (!isDarwin && !isArm) [ libvpx libpulseaudio ] # Need to be fixed on Darwin and ARM
     ++ optional ((isLinux || isFreeBSD) && !isArm) libva
