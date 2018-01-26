@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, icu, expat, zlib, bzip2, python, fixDarwinDylibNames, libiconv
+{ stdenv, fetchurl, icu, expat, zlib, bzip2, python, fixDarwinDylibNames, libiconv, which
 , buildPlatform, hostPlatform
 , toolset ? if stdenv.cc.isClang then "clang" else null
 , enableRelease ? true
@@ -147,7 +147,7 @@ stdenv.mkDerivation {
 
   enableParallelBuilding = true;
 
-  buildInputs = [ expat zlib bzip2 libiconv ]
+  buildInputs = [ expat zlib bzip2 libiconv which ]
     ++ stdenv.lib.optionals (hostPlatform == buildPlatform) [ python icu ]
     ++ stdenv.lib.optional stdenv.isDarwin fixDarwinDylibNames;
 
