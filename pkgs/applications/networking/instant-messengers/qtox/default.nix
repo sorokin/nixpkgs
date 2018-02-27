@@ -3,7 +3,7 @@
   libpthreadstubs, libXdmcp, libXScrnSaver,
   qtbase, qtsvg, qttools, qttranslations,
   ffmpeg, filter-audio, libsodium, libopus,
-  libvpx, openal, opencv, pcre, qrencode, sqlcipher }:
+  libvpx, openal, pcre, qrencode, sqlcipher }:
 
 mkDerivation rec {
   name = "qtox-${version}";
@@ -21,7 +21,7 @@ mkDerivation rec {
     libpthreadstubs libXdmcp libXScrnSaver
     qtbase qtsvg qttools qttranslations
     ffmpeg filter-audio libopus libsodium
-    libvpx openal opencv pcre qrencode sqlcipher
+    libvpx openal pcre qrencode sqlcipher
   ];
 
   nativeBuildInputs = [ cmake pkgconfig ];
