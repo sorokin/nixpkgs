@@ -122,6 +122,7 @@ let
       kontact = callPackage ./kontact.nix {};
       kontactinterface = callPackage ./kontactinterface.nix {};
       korganizer = callPackage ./korganizer.nix {};
+      kpat = callPackage ./kpat.nix {};
       kpimtextedit = callPackage ./kpimtextedit.nix {};
       kqtquickcharts = callPackage ./kqtquickcharts.nix {};
       krfb = callPackage ./krfb.nix {};
@@ -130,6 +131,7 @@ let
       libgravatar = callPackage ./libgravatar.nix {};
       libkcddb = callPackage ./libkcddb.nix {};
       libkdcraw = callPackage ./libkdcraw.nix {};
+      libkdegames = callPackage ./libkdegames.nix {};
       libkdepim = callPackage ./libkdepim.nix {};
       libkexiv2 = callPackage ./libkexiv2.nix {};
       libkipi = callPackage ./libkipi.nix {};
