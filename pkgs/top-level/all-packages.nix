@@ -18562,6 +18562,8 @@ with pkgs;
 
   shutter = callPackage ../applications/graphics/shutter { };
 
+  simple-mtpfs = callPackage ../tools/filesystems/simple-mtpfs { };
+
   simple-scan = gnome3.simple-scan;
 
   siproxd = callPackage ../applications/networking/siproxd { };
