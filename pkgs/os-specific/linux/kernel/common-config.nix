@@ -346,6 +346,7 @@ let
       SECURITY_APPARMOR                = yes;
       DEFAULT_SECURITY_APPARMOR        = yes;
 
+      PAGE_TABLE_ISOLATION             = no;
     } // optionalAttrs (!stdenv.hostPlatform.isAarch32) {
 
       # Detect buffer overflows on the stack
