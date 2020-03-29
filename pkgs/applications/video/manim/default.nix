@@ -29,6 +29,8 @@ buildPythonApplication rec {
     pydub
 
     cairo sox ffmpeg xdg_utils
+
+    texlive.combined.scheme-full
   ];
 
   # Test with texlive to see whether it works but don't propagate
